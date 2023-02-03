@@ -38,13 +38,13 @@ APPLICATION -
 
 Creators:
 
- Michael Lito
+ Michael Lito - https://github.com/Micklitodev
 
- Connor Phillips 
+ Connor Phillips - https://github.com/Silveraj236H
 
- Stephen Spearman
+ Stephen Spearman - https://github.com/DenimB96
 
- Ambria Johnson
+ Ambria Johnson - 
 
 ____________________________________________
 

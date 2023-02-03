@@ -1,65 +1,47 @@
+document.addEventListener("DOMContentLoaded", function () {
 
+const submitBtn = document.querySelector(".btn");
+const formEl = document.getElementById("name");
+
+const title = document.getElementById('title')
+const descr = document.getElementById('descr')
 
 const endpoint = "https://api.themoviedb.org/3";
 const apiKey = "3ec796860d338dbe182981a1c1f3f1c1";
 
-
-const apiEngine = async () => {
-  const path = "/genre/movie/list";
-  const queryParams = `?api_key=${apiKey}`;
+const searchNameEngine = async (genre) => {
+  
+  const path = "/search/movie";
+  const queryParams = `?api_key=${apiKey}&query=${genre}&language=en-US&page=1&include_adult=false`;
   const url = `${endpoint}${path}${queryParams}`;
   try {
     const response = await fetch(url);
     if (response.ok) {
       const jsonResponse = await response.json();
-      return jsonResponse;
+      renderData(jsonResponse.results)
     }
   } catch (Error) {
     console.log(Error);
   }
 };
 
-let genKeyArr = []
+const renderData = async (jsonResponse) => {
+  title.textContent = jsonResponse[0].original_title
+  descr.textContent = jsonResponse[0].overview
+}
 
-const renderGenre = async () => {
-  const jsonResponse = await apiEngine();
-  var genreArr = [];
-  genKeyArr.push(Object.keys(jsonResponse.genres))
-  for (let i = 0; i < 19; i++) {
-    genreArr.push(jsonResponse.genres[i].name);
-  }
-  for (let i = 0; i < 19; i++) {
-    const btnEl = document.createElement("button");
-    btnEl.textContent = genreArr[i];
-    btnEl.setAttribute('value', genKeyArr[0][i])
-    document.body.appendChild(btnEl);
-    btnEl.addEventListener('click', handleClick)
-  }
-};
+
+submitBtn.addEventListener('click', handleClick)
 
 
 function handleClick(e) {
   e.preventDefault()
-  searchGenreApi(e.target.value)
-  removeEventListener('click', handleClick)
+   searchNameEngine(formEl.value) 
+   const clear = document.getElementById("name");
+   clear.value = "";
+   renderData()
 }
 
-const searchGenreApi = async (genre) => {
-  const path = "/discover/movie";
-  const queryParams = `?certification_country=US&with_genres=${genre}&sort_by=vote_average.desc&api_key=${apiKey}`;
-  console.log(queryParams)
-  const url = `${endpoint}${path}${queryParams}`;
-  try {
-    const response = await fetch(url);
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      console.log(jsonResponse)
-    }
-  } catch (Error) {
-    console.log(Error);
-  }
 
-}
 
-renderGenre();
-
+});

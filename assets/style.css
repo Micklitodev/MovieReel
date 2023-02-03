@@ -1,1 +1,7 @@
-  
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    color: #34282C;
+    font-family: Cambria
+    };

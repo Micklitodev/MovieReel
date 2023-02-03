@@ -41,7 +41,5 @@ function handleClick(e) {
    clear.value = "";
    renderData()
 }
+}); 
 
-
-
-});

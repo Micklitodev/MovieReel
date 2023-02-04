@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         const jsonResponse = await response.json();
         console.log(jsonResponse);
-        console.log(jsonResponse.results[0].locations[3].display_name);
-        let displayName = jsonResponse.results[0].locations[3].display_name;
+        console.log(jsonResponse.results[0].locations[0].display_name);
+        let displayName = jsonResponse.results[0].locations[0].display_name;
         if (displayName) {
           let link = jsonResponse.results[0].locations[0].url;
           let icon = jsonResponse.results[0].locations[0].icon;

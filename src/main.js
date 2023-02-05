@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   const main = document.getElementById("main");
 
@@ -55,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     name = name.split(" ").join("");
-    console.log(name);
     const path = "/lookup";
     const queryParams = `?term=${name}&country=us`;
     const url = `${motnEndPoint}${path}${queryParams}`;
@@ -65,25 +65,31 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         const jsonResponse = await response.json();
         console.log(jsonResponse);
-        console.log(jsonResponse.results[0].locations[3].display_name);
-        let displayName = jsonResponse.results[0].locations[3].display_name;
-        if (displayName) {
-          let link = jsonResponse.results[0].locations[0].url;
-          let icon = jsonResponse.results[0].locations[0].icon;
-          let img = jsonResponse.results[0].picture;
+        console.log(jsonResponse.results[0].locations[0].display_name);
+        if (jsonResponse.results[0].hasOwnProperty("locations")) {
+          // let jsonResults = jsonResponse.results
+          for(let x = 0 ; x < 3 ; x++ ) {
+          for( let i = 0; i < 3 ; i++) { 
+          var link = jsonResponse.results[x].locations[i].url;
+          var icon = jsonResponse.results[x].locations[i].icon;
+          var aEl = document.createElement("a");
+          var imgEl = document.createElement("img");
+          main.appendChild(aEl);
+          aEl.appendChild(imgEl);
+          imgEl.setAttribute("src", `${icon}`);
+          aEl.setAttribute("href", `${link}`);
+          
+        }
+      
+          let img = jsonResponse.results[x].picture;
 
           let pEl = document.createElement("p");
-          let aEl = document.createElement("a");
-          let imgEl = document.createElement("img");
           let iframe = document.createElement("img");
 
           main.appendChild(iframe);
           main.appendChild(pEl);
-          main.appendChild(aEl);
-          aEl.appendChild(imgEl);
 
-          imgEl.setAttribute("src", `${icon}`);
-          aEl.setAttribute("href", `${link}`);
+
           iframe.setAttribute("src", `${img}`);
 
           pEl.setAttribute("class", "rendered-container1");
@@ -93,10 +99,11 @@ document.addEventListener("DOMContentLoaded", function () {
           iframe.style.cssText = "max-width: 300px";
 
           pEl.textContent = `Watch now on:`;
-        }
+        } }
       }
     } catch (Error) {
-      console.log(Error);
+     console.log(Error)
+     console.log('NOT STREAMED ANYWHERE CURRENTLY')
     }
   };
 

@@ -1,25 +1,27 @@
 :root {
-  --offwhite: rgb(255, 251, 251);
-  --redcor: rgb(141, 35, 25);
-  --charcoal: hsla(0, 0%, 0%, 0.945);
+  --offwhite: rgb(42, 42, 42);
+  --redcor: rgb(119, 17, 38);
+  --charcoal: hsla(0, 0%, 96%, 0.945);
+  --links: rgb(230, 230, 230);
 }
 
 body {
   background-color: var(--redcor);
-  font-family: Cambria;
-  color: var(--charcoal)
+  font-family: "Roboto Flex", sans-serif;
+  color: var(--charcoal);
+  min-height: 1000px;
 }
 
 header {
   text-align: center;
   padding: 10px;
   background-color: var(--offwhite);
-  opacity: 0.9;
 }
 
 h1 {
   font-size: 40px;
   font-weight: 900;
+  font-family: "Dancing Script", cursive;
 }
 
 h2 {
@@ -34,14 +36,6 @@ h2 {
   margin-top: 25px;
 }
 
-form {
-  padding: 20px;
-  background-color: var(--offwhite);
-  border-radius: 10px;
-  max-width: 460px;
-  margin-top: 20px;
-}
-
 section {
   margin-left: 25%;
   margin-right: 25%;
@@ -51,9 +45,28 @@ section {
   text-align: center;
 }
 
+section h2 {
+  margin-top: 10px;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+form {
+  margin-left: 18%;
+  margin-right: 18%;
+  padding: 20px;
+  background-color: var(--offwhite);
+  border-radius: 10px;
+  max-width: 460px;
+  margin-top: 20px;
+}
+
+.btn {
+  margin-top: 15px;
+}
 
 main {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -64,17 +77,16 @@ main {
   max-width: 800px;
   margin-left: 25%;
   margin-right: 25%;
-  
 }
 
 #title {
-  font-size: 19px;
+  font-size: 20px;
   padding: 20px;
   margin-top: 20px;
 }
 #descr {
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .rendered-h2 {
@@ -82,29 +94,43 @@ main {
   width: fit-content;
   border-radius: 5px;
   padding: 5px;
-
 }
 
 .rendered-img {
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 10px;
   margin-top: 5px;
 }
 
+.rendered-link-parent {
+  background-color: var(--links);
+  border-radius: 5px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
 .rendered-links {
-  display: block;
   margin-top: 5px;
+  padding: 1px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 footer {
   text-align: center;
   padding: 20px;
   background-color: var(--offwhite);
-  margin-top: 500px;
-  
+  position: fixed;
+  bottom: -1px;
+  width: 100%;
 }
-
 
 a:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
+
+/* gapi declarations */
+/* 
+font-family: 'Dancing Script', cursive;
+font-family: 'Roboto Flex', sans-serif; */

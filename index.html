@@ -10,6 +10,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Flex:opsz@8..144&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
@@ -17,11 +23,15 @@
       <h1>Movie Reelz</h1>
     </header>
     <section id="section">
-    <h2>Find a movie!</h2>
-    <form>
-      <input id="name" placeholder="Search for a movie..." />
-      <button class="btn">Search</button>
-    </form>
+      <h2>Find a movie!</h2>
+      <form>
+        <input
+          id="name"
+          class="input is-dark"
+          placeholder="Search for a movie..."
+        />
+        <button class="btn button is-danger">Search</button>
+      </form>
 
       <div id="title"></div>
       <div id="descr"></div>

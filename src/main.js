@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
           for (let i = 0; i < 3; i++) {
             let movieName = jsonResponse.results[i].name;
             let movieNameEl = document.createElement("h2");
-            movieNameEl.setAttribute('class', 'rendered-h2')
+            movieNameEl.setAttribute("class", "rendered-h2");
             movieNameEl.textContent = movieName;
             main.appendChild(movieNameEl);
 
@@ -80,6 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
             prevImgEl.setAttribute("src", `${prevImg}`);
             prevImgEl.setAttribute("class", "rendered-img");
             main.appendChild(prevImgEl);
+
+            let linkParentEl = document.createElement("div");
+            linkParentEl.setAttribute("class", "rendered-link-parent");
+            main.appendChild(linkParentEl);
 
             for (let x = 0; x < 3; x++) {
               let link = jsonResponse.results[i].locations[x].url;
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
               linkEl.setAttribute("class", "rendered-links");
               iconEl.setAttribute("src", `${icon}`);
               linkEl.appendChild(iconEl);
-              main.appendChild(linkEl);
+              linkParentEl.appendChild(linkEl);
             }
           }
         }

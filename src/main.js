@@ -1,6 +1,6 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const main = document.getElementById("main");
+  const section = document.getElementById("section");
 
   const submitBtn = document.querySelector(".btn");
   const formEl = document.getElementById("name");
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tmdbApiKey = "3ec796860d338dbe182981a1c1f3f1c1";
 
   const searchNameEngine = async (genre) => {
+    section.style.cssText = "display: block";
     const path = "/search/movie";
     const queryParams = `?api_key=${tmdbApiKey}&query=${genre}&language=en-US&page=1&include_adult=false`;
     const url = `${tmdbEndPoint}${path}${queryParams}`;
@@ -67,43 +68,36 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(jsonResponse);
         console.log(jsonResponse.results[0].locations[0].display_name);
         if (jsonResponse.results[0].hasOwnProperty("locations")) {
-          // let jsonResults = jsonResponse.results
-          for(let x = 0 ; x < 3 ; x++ ) {
-          for( let i = 0; i < 3 ; i++) { 
-          var link = jsonResponse.results[x].locations[i].url;
-          var icon = jsonResponse.results[x].locations[i].icon;
-          var aEl = document.createElement("a");
-          var imgEl = document.createElement("img");
-          main.appendChild(aEl);
-          aEl.appendChild(imgEl);
-          imgEl.setAttribute("src", `${icon}`);
-          aEl.setAttribute("href", `${link}`);
-          
+          for (let i = 0; i < 3; i++) {
+            let movieName = jsonResponse.results[i].name;
+            let movieNameEl = document.createElement("h2");
+            movieNameEl.setAttribute('class', 'rendered-h2')
+            movieNameEl.textContent = movieName;
+            main.appendChild(movieNameEl);
+
+            let prevImg = jsonResponse.results[i].picture;
+            let prevImgEl = document.createElement("img");
+            prevImgEl.setAttribute("src", `${prevImg}`);
+            prevImgEl.setAttribute("class", "rendered-img");
+            main.appendChild(prevImgEl);
+
+            for (let x = 0; x < 3; x++) {
+              let link = jsonResponse.results[i].locations[x].url;
+              let icon = jsonResponse.results[i].locations[x].icon;
+              let linkEl = document.createElement("a");
+              let iconEl = document.createElement("img");
+              linkEl.setAttribute("href", `${link}`);
+              linkEl.setAttribute("class", "rendered-links");
+              iconEl.setAttribute("src", `${icon}`);
+              linkEl.appendChild(iconEl);
+              main.appendChild(linkEl);
+            }
+          }
         }
-      
-          let img = jsonResponse.results[x].picture;
-
-          let pEl = document.createElement("p");
-          let iframe = document.createElement("img");
-
-          main.appendChild(iframe);
-          main.appendChild(pEl);
-
-
-          iframe.setAttribute("src", `${img}`);
-
-          pEl.setAttribute("class", "rendered-container1");
-          aEl.setAttribute("class", "rendered-container");
-          imgEl.setAttribute("class", "rendered-container");
-          iframe.setAttribute("class", "rendered-container2");
-          iframe.style.cssText = "max-width: 300px";
-
-          pEl.textContent = `Watch now on:`;
-        } }
       }
     } catch (Error) {
-     console.log(Error)
-     console.log('NOT STREAMED ANYWHERE CURRENTLY')
+      console.log(Error);
+      console.log("NOT STREAMED ANYWHERE CURRENTLY");
     }
   };
 

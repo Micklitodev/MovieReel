@@ -4,25 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Reelz Search Engine</title>
+    <title>MovieReelz Movie-Finder</title>
     <script src="./src/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <header>
-      <h1>Movie Reel</h1>
+      <h1>Movie Reelz</h1>
     </header>
+    <section id="section">
     <h2>Find a movie!</h2>
     <form>
       <input id="name" placeholder="Search for a movie..." />
       <button class="btn">Search</button>
     </form>
-    <main id="main">
-      <section>
-        <div id="title"></div>
-        <div id="descr"></div>
-      </section>
-    </main>
+
+      <div id="title"></div>
+      <div id="descr"></div>
+    </section>
+
+    <main id="main"></main>
+
     <footer>
       <p>&copy; Movie Reelz Search Engine 2023</p>
       <p>

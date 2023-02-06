@@ -9,7 +9,7 @@ body {
   background-color: var(--redcor);
   font-family: "Roboto Flex", sans-serif;
   color: var(--charcoal);
-  min-height: 1000px;
+  min-height: 2000px;
 }
 
 header {

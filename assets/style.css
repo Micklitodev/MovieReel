@@ -36,6 +36,27 @@ h2 {
   margin-top: 25px;
 }
 
+#searchHistory {
+  background-color: var(--offwhite);
+  border-radius: 10px;
+  width: 200px;
+  height: 400px;
+  float:left;
+  margin-top: 10px;
+  margin-left: 5%;
+
+
+}
+
+#searchHistory button {
+  display: block;
+  margin-left: 22%;
+  margin-right: 70%;
+  margin-top: 10px;
+  
+}
+
+
 section {
   margin-left: 25%;
   margin-right: 25%;

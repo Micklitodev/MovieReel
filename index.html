@@ -22,18 +22,31 @@
     <header>
       <h1>Movie Reelz</h1>
     </header>
+
+    <div id="searchHistory">
+      <button class="button is-danger" id="historyBtns">Scream</button>
+      <button class="button is-danger" id="historyBtns">Insidious</button>
+      <button class="button is-danger" id="historyBtns">jackass</button>
+      <button class="button is-danger" id="historyBtns">nightmare</button>
+      <button class="button is-danger" id="historyBtns">tree</button>
+    </div>
+
     <section id="section">
       <h2>Find a movie!</h2>
+
       <form>
         <input
+          type="text"
           id="name"
           class="input is-dark"
           placeholder="Search for a movie..."
         />
+
         <button class="btn button is-danger">Search</button>
       </form>
 
       <div id="title"></div>
+
       <div id="descr"></div>
     </section>
 

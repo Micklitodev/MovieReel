@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Reelz Search Engine </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieReelz Movie-Finder</title>
     <script src="./src/main.js"></script>
-    <link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Flex:opsz@8..144&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
     <header>
-        <h1> Movie Reelz </h1>
+      <h1>Movie Reelz</h1>
     </header>
-<main>
-    <form>
-        <input id="name" placeholder="Search for a movie...">
-        <button class="btn">Search</button>
-    </form>
 
-    <section>
-        <div id="title">
-        </div>
-        <div id="descr">
+    <div id="searchHistory">
+      <button class="button is-danger" id="historyBtns">Scream</button>
+      <button class="button is-danger" id="historyBtns">Insidious</button>
+      <button class="button is-danger" id="historyBtns">jackass</button>
+      <button class="button is-danger" id="historyBtns">nightmare</button>
+      <button class="button is-danger" id="historyBtns">tree</button>
     </div>
-</section>
 
-</main>
-<footer>
-    <p>&copy; Movie Reelz Search Engine 2023</p>
-    <p>Created by Michael Lito, Connor Phillips, Ambria Johnson, & Stephen Spearman </p>
-</footer>
-</body>
+    <section id="section">
+      <h2>Find a movie!</h2>
+
+      <form>
+        <input
+          type="text"
+          id="name"
+          class="input is-dark"
+          placeholder="Search for a movie..."
+        />
+
+        <button class="btn button is-danger">Search</button>
+      </form>
+
+      <div id="title"></div>
+
+      <div id="descr"></div>
+    </section>
+
+    <main id="main"></main>
+
+    <footer>
+      <p>&copy; Movie Reelz Search Engine 2023</p>
+      <p>
+        Created by Michael Lito, Connor Phillips, Ambria Johnson, & Stephen
+        Spearman
+      </p>
+    </footer>
+  </body>
 </html>

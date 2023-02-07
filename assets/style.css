@@ -18,11 +18,25 @@ header {
   background-color: var(--offwhite);
 }
 
+.siteDescr {
+  margin-left: 25%;
+  margin-right: 25%;
+  height: 100px;
+  background-color: var(--offwhite);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.siteDescr h2 {
+  max-width: 500px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
 h1 {
   font-size: 40px;
   font-weight: 900;
   font-family: "Dancing Script", cursive;
-
 }
 
 h2 {
@@ -42,21 +56,21 @@ h2 {
   border-radius: 10px;
   width: 200px;
   height: 400px;
-  float:left;
-  margin-top: 10px;
+  float: left;
+  margin-top: 25px;
   margin-left: 5%;
+}
 
-
+.searchButtons {
+  margin-top: 28%;
 }
 
 #searchHistory button {
   display: block;
   margin-left: 22%;
   margin-right: 70%;
-  margin-top: 10px;
-  
+  margin-top: 20px;
 }
-
 
 section {
   margin-left: 25%;

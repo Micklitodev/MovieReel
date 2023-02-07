@@ -11,14 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const tmdbEndPoint = "https://api.themoviedb.org/3";
   const tmdbApiKey = "3ec796860d338dbe182981a1c1f3f1c1";
 
-  
   const searchNameEngine = async (genre) => {
     section.style.cssText = "display: block";
     const path = "/search/movie";
     const queryParams = `?api_key=${tmdbApiKey}&query=${genre}&language=en-US&page=1&include_adult=false`;
     const url = `${tmdbEndPoint}${path}${queryParams}`;
     try {
-      const response = await fetch(url); 
+      const response = await fetch(url);
       if (response.ok) {
         const jsonResponse = await response.json();
         renderData(jsonResponse.results);
@@ -38,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
     searchBtns[3].textContent = localStorage.getItem(3);
     searchBtns[4].textContent = localStorage.getItem(4);
   }
+
+  localStorage.setItem(0, searchBtns[0].textContent);
+  localStorage.setItem(1, searchBtns[1].textContent);
+  localStorage.setItem(2, searchBtns[2].textContent);
+  localStorage.setItem(3, searchBtns[3].textContent);
+  localStorage.setItem(4, searchBtns[4].textContent);
 
   function displayHistory(history) {
     searchBtns[index].textContent = history;

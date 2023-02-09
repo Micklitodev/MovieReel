@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const main = document.getElementById("main");
+
+  const container = document.createElement("div")
+  main.appendChild(container)
+
   const section = document.getElementById("section");
 
   const submitBtn = document.querySelector(".btn");
@@ -104,22 +108,42 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(jsonResponse);
         console.log(jsonResponse.results[0].locations[0].display_name);
         if (jsonResponse.results[0].hasOwnProperty("locations")) {
-          for (let i = 0; i < 3; i++) {
+
+          if(container.childElementCount == 9) {
+            console.log("shit")
+           container.remove()
+            
+            
+          } 
+          if(main.childElementCount > 1) {
+            let container = document.createElement(div)
+            main.appendChild(container)
+            console.log("damn")
+          } 
+      
+            
+
+         
+          
+          
+           for (let i = 0; i < 3; i++) {
             let movieName = jsonResponse.results[i].name;
             let movieNameEl = document.createElement("h2");
             movieNameEl.setAttribute("class", "rendered-h2");
             movieNameEl.textContent = movieName;
-            main.appendChild(movieNameEl);
+            container.appendChild(movieNameEl);
+            console.log("confused")
+
 
             let prevImg = jsonResponse.results[i].picture;
             let prevImgEl = document.createElement("img");
             prevImgEl.setAttribute("src", `${prevImg}`);
             prevImgEl.setAttribute("class", "rendered-img");
-            main.appendChild(prevImgEl);
+            container.appendChild(prevImgEl);
 
             let linkParentEl = document.createElement("div");
             linkParentEl.setAttribute("class", "rendered-link-parent");
-            main.appendChild(linkParentEl);
+            container.appendChild(linkParentEl);
 
             for (let x = 0; x < 3; x++) {
               let link = jsonResponse.results[i].locations[x].url;
@@ -133,7 +157,12 @@ document.addEventListener("DOMContentLoaded", function () {
               linkParentEl.appendChild(linkEl);
             }
           }
+         
+
+
+          
         }
+
       }
     } catch (Error) {
       console.log(Error);

@@ -108,23 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(jsonResponse);
         console.log(jsonResponse.results[0].locations[0].display_name);
         if (jsonResponse.results[0].hasOwnProperty("locations")) {
+          container.innerHTML = "";
 
-          if(container.childElementCount == 9) {
-            console.log("shit")
-           container.remove()
-            
-            
-          } 
-          if(main.childElementCount > 1) {
-            let container = document.createElement(div)
-            main.appendChild(container)
-            console.log("damn")
-          } 
-      
-            
 
-         
-          
           
            for (let i = 0; i < 3; i++) {
             let movieName = jsonResponse.results[i].name;

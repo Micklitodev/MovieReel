@@ -109,10 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(jsonResponse.results[0].locations[0].display_name);
         if (jsonResponse.results[0].hasOwnProperty("locations")) {
           container.innerHTML = "";
-
+        
 
           
-           for (let i = 0; i < 3; i++) {
+           for (let i = 0; i < jsonResponse.results.length; i++) {
             let movieName = jsonResponse.results[i].name;
             let movieNameEl = document.createElement("h2");
             movieNameEl.setAttribute("class", "rendered-h2");
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
             linkParentEl.setAttribute("class", "rendered-link-parent");
             container.appendChild(linkParentEl);
 
-            for (let x = 0; x < 3; x++) {
+            for (let x = 0; x < jsonResponse.results[i].locations.length; x++) {
               let link = jsonResponse.results[i].locations[x].url;
               let icon = jsonResponse.results[i].locations[x].icon;
               let linkEl = document.createElement("a");
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } catch (Error) {
       console.log(Error);
-      console.log("NOT STREAMED ANYWHERE CURRENTLY");
+      container.innerHTML = "Unfortunately, your movie is not streamed anywhere. Try again later :("
     }
   };
 

@@ -149,13 +149,13 @@ font-family: 'Dancing Script', cursive;
 font-family: 'Roboto Flex', sans-serif; */
 @media screen and (max-width: 1030px) {
   #searchHistory {
-   max-height: 60px;
-   float: none;
-   margin-left: 25%;
-   margin-right: 25%;
-   display: flex;
-   flex-wrap: wrap;
-   margin-bottom: -15px;
+    max-height: 60px;
+    float: none;
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -15px;
   }
   #searchHistory button {
     display: flex;

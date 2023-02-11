@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const main = document.getElementById("main");
 
-  const container = document.createElement("div")
-  main.appendChild(container)
+  const container = document.createElement("div");
+  main.appendChild(container);
 
   const section = document.getElementById("section");
 
@@ -109,17 +109,14 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(jsonResponse.results[0].locations[0].display_name);
         if (jsonResponse.results[0].hasOwnProperty("locations")) {
           container.innerHTML = "";
-        
 
-          
-           for (let i = 0; i < jsonResponse.results.length; i++) {
+          for (let i = 0; i < jsonResponse.results.length; i++) {
             let movieName = jsonResponse.results[i].name;
             let movieNameEl = document.createElement("h2");
             movieNameEl.setAttribute("class", "rendered-h2");
             movieNameEl.textContent = movieName;
             container.appendChild(movieNameEl);
-            console.log("confused")
-
+            console.log("confused");
 
             let prevImg = jsonResponse.results[i].picture;
             let prevImgEl = document.createElement("img");
@@ -143,16 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
               linkParentEl.appendChild(linkEl);
             }
           }
-         
-
-
-          
         }
-
       }
     } catch (Error) {
       console.log(Error);
-      container.innerHTML = "Unfortunately, your movie is not streamed anywhere. Try again later :("
+      container.innerHTML =
+        "Unfortunately, your movie is not streamed anywhere. Try again later :(";
     }
   };
 

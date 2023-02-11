@@ -160,6 +160,7 @@ font-family: 'Dancing Script', cursive;
 font-family: 'Roboto Flex', sans-serif; */
 @media screen and (max-width: 1030px) {
   #searchHistory {
+
     max-height: 45px;
     float: none;
     margin-left: 20%;
@@ -168,6 +169,7 @@ font-family: 'Roboto Flex', sans-serif; */
     flex-wrap: wrap;
     margin-bottom: -15px;
     overflow: hidden;
+
   }
   #searchHistory button {
     display: flex;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MovieReelz Movie-Finder</title>
+    <!-- Links -->
     <script src="./src/main.js"></script>
     <link
       rel="stylesheet"
@@ -20,11 +21,13 @@
   </head>
   <body>
     <header>
+      <!-- Title -->
       <h1>
         Movie Reelz
         <div class="icon">🍿</div>
       </h1>
-    </header>
+     </header>  
+     <!-- Search history container with buttons -->
     <div id="searchHistory">
       <p>Recent searches:</p>
       <button class="button is-danger" id="historyBtns">scream</button>
@@ -33,12 +36,14 @@
       <button class="button is-danger" id="historyBtns">nightmare</button>
       <button class="button is-danger" id="historyBtns">bio-dome</button>
     </div>
+    <!-- Basic description of app-->
     <div class="siteDescr">
       <h2>
         Can't figure out where to watch that movie or tv show you've been
         thinking about? Let us help you find it!
       </h2>
     </div>
+    <!-- Search Input -->
     <section id="section">
       <h2>Find a movie!</h2>
       <form>
@@ -50,15 +55,18 @@
         />
         <button class="btn button is-danger">Search</button>
       </form>
+      <!-- Rendering area for title and description of top search -->
       <div id="title"></div>
       <div id="descr"></div>
     </section>
+    <!-- Section data and images for searches -->
     <main id="main"></main>
     <br />
     <br />
     <br />
     <br />
     <footer>
+      <!-- Credits -->
       <p>&copy; Movie Reelz Search Engine 2023</p>
       <p>Created by Michael Lito, Ambria Johnson, & Stephen Spearman</p>
     </footer>

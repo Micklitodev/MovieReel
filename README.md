@@ -21,11 +21,9 @@ Please read each section to better understanding of the idea behind this project
 
 ## Usage
 
-- Upon loading the page the user will be greeted with a brief description of the app and search bar to look up data. When the movie or TV show is inputed the user is presented with the top searches or, a message informing the user that the search is not currently available on a streaming platform. When the search is successful the user is shown a brief description of the top search along with names, images, and streaming platform links of the related results based on the keyword search. After a search is complete the keyword will be saved and updated to a list of previous searches in the form of buttons, these buttons can be clicked and will display the same results of the pior search.   
+- Upon loading the page the user will be greeted with a brief description of the app and search bar to look up data. When the movie or TV show is inputed the user is presented with the top searches or, a message informing the user that the search is not currently available on a streaming platform. When the search is successful the user is shown a brief description of the top search along with names, images, and streaming platform links of the related results based on the keyword search. After a search is complete the keyword will be saved and updated to a list of previous searches in the form of buttons, these buttons can be clicked and will display the same results of the prior search.   
 
-- Enjoy!
-
-Thank you!
+Enjoy and thank you!
 
 ## Credits
 ____________________________________________

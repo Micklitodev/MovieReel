@@ -3,11 +3,11 @@
 
 ## Link
 
-Click [- here -]() to go to the live link.
+Click [https://micklitodev.github.io/MovieReel/] to go to the live link.
 
 ## ScreenShot
 
-![Screenshot of live WeatherTrackerAPI App.]()
+![image](https://user-images.githubusercontent.com/120414766/218605223-2a12d7cc-d557-484a-bdd9-e3a8215dcee3.png)
 
 ## Description
 

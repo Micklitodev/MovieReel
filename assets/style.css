@@ -6,9 +6,9 @@
 }
 body {
   background-color: var(--redcor);
+  height: 100%;
   font-family: "Roboto Flex", sans-serif;
   color: var(--charcoal);
-  height: fit-content;
 }
 header {
   text-align: center;
@@ -145,7 +145,7 @@ main {
 }
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 35px;
   background-color: var(--offwhite);
   position: fixed;
   bottom: -1px;

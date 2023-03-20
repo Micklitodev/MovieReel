@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const dotenv = require('dotenv'); 
-  dotenv.config(); 
   const main = document.getElementById("main");
 
   const container = document.createElement("div");
@@ -15,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const descr = document.getElementById("descr");
 
   const tmdbEndPoint = "https://api.themoviedb.org/3";
-  const tmdbApiKey = process.env.TMDB_API_KEY;
+  const tmdbApiKey = '3ec796860d338dbe182981a1c1f3f1c1';
 
   const searchNameEngine = async (genre) => {
     section.style.cssText = "display: block";
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": process.env.UTELLY_API_KEY,
+        "X-RapidAPI-Key": '5e25bf14aamsh93f348e1f56f1f0p1162c9jsnc01051fd8308',
         "X-RapidAPI-Host":
           "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
       },
